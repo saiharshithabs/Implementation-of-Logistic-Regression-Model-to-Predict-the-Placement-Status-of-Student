@@ -20,67 +20,77 @@ To write a program to implement the the Logistic Regression Model to Predict the
 
 6.Calculate the accuracy, confusion and classification report by importing the required modules from sklearn.
 
-7.Apply new unknown values
+7.Apply new unknown values. 
 
 ## Program:
 ```
 /*
 Program to implement the the Logistic Regression Model to Predict the Placement Status of Student.
-Developed by: B S SAI HARSHITHA
-RegisterNumber:  212220040139
-
-Program to implement the the Logistic Regression Model to Predict the Placement Status of Student.
-Developed by:N.Yasaswini 
-RegisterNumber:212220040095
-import pandas as pd
-data=pd.read_csv("Placement_Data.csv")
-data.head()
-data1=data.copy() 
-data1=data1.drop(["sl_no","salary"],axis=1) 
-data1.head() 
-data1.isnull().sum() 
-data1.duplicated().sum()
-from sklearn.preprocessing import LabelEncoder
-le=LabelEncoder() 
-data1["gender"]=le.fit_transform(data1["gender"]) 
-data1["ssc_b"]=le.fit_transform(data1["ssc_b"]) 
-data1["hsc_b"]=le.fit_transform(data1["hsc_b"])
-data1["hsc_s"]=le.fit_transform(data1["hsc_s"])
-data1["degree_t"]=le.fit_transform(data1["degree_t"])
-data1["workex"]=le.fit_transform(data1["workex"])
-data1["specialisation"]=le.fit_transform(data1["specialisation"])
-data1["status"]=le.fit_transform(data1["status"])
-data1
-x=data1.iloc[:,:-1] 
-x   
-y=data1["status"]
-from sklearn.model_selection import train_test_split
-x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2,random_state=0)
-from sklearn.linear_model import LogisticRegression
-lr=LogisticRegression(solver="liblinear")
-lr.fit(x_train,y_train)
-y_pred=lr.predict(x_test) 
-y_pred
-from sklearn.metrics import accuracy_score 
-accuracy=accuracy_score(y_test,y_pred) 
-accuracy
-from sklearn.metrics import confusion_matrix
-confusion=confusion_matrix(y_test,y_pred)
-confusion
-from sklearn.metrics import classification_report
-classification_report1=classification_report(y_test,y_pred)
-classification_report1
-lr.predict([[1,80,1,90,1,1,90,1,0,85,1,85]])
+Developed by: B S SAIHARSHITHA
+RegisterNumber: 212220040139
 */
+import pandas as pd
+data = pd.read_csv("Placement_Data.csv")
+data.head()
 
+data1 = data.copy()
+data1 = data1.drop(["sl_no","salary"],axis = 1)
+data1.head()
+
+data1.isnull().sum()
+
+data1.duplicated().sum()
+
+from sklearn.preprocessing import LabelEncoder
+le = LabelEncoder()
+data1["gender"] = le.fit_transform(data1["gender"])
+data1["ssc_b"] = le.fit_transform(data1["ssc_b"])
+data1["hsc_b"] = le.fit_transform(data1["hsc_b"])
+data1["hsc_s"] = le.fit_transform(data1["hsc_s"])
+data1["degree_t"] = le.fit_transform(data1["degree_t"])
+data1["workex"] = le.fit_transform(data1["workex"])
+data1["specialisation"] = le.fit_transform(data1["specialisation"])
+data1["status"] = le.fit_transform(data1["status"])
+data1
+
+x = data1.iloc[:,:-1]
+x
+
+y = data1["status"]
+y
+
+from sklearn.model_selection import train_test_split
+x_train,x_test,y_train,y_test = train_test_split(x,y,test_size = 0.2,random_state = 0)
+
+from sklearn.linear_model import LogisticRegression
+lr = LogisticRegression(solver = "liblinear")
+lr.fit(x_train,y_train)
+
+y_pred = lr.predict(x_test)
+y_pred
+
+from sklearn.metrics import accuracy_score
+accuracy = accuracy_score(y_test,y_pred)
+accuracy
+
+from sklearn.metrics import confusion_matrix
+confusion = confusion_matrix(y_test,y_pred)
+confusion
+
+from sklearn.metrics import classification_report
+classification_report1 = classification_report(y_test,y_pred)
+classification_report1
+
+lr.predict([[1,80,1,90,1,1,90,1,0,85,1,85]])
 ```
 
 ## Output:
-![image](https://github.com/saiharshithabs/Implementation-of-Logistic-Regression-Model-to-Predict-the-Placement-Status-of-Student/blob/6fedc0f06bc7f4cb38a241df0b15109d0aad2d93/WhatsApp%20Image%202022-10-14%20at%209.09.30%20AM.jpeg)
-
-![image](https://github.com/saiharshithabs/Implementation-of-Logistic-Regression-Model-to-Predict-the-Placement-Status-of-Student/blob/40e2261fc4d29169e7d65102e03ae5c3e6a77463/WhatsApp%20Image%202022-10-14%20at%209.14.00%20AM.jpeg)
-
-
+![image](https://user-images.githubusercontent.com/94679395/201475430-35091daa-7d71-4477-b1f9-33dedfc22575.png)
+![image](https://user-images.githubusercontent.com/94679395/201475440-719256a3-c79f-4eb1-896e-c748abc7340c.png)
+![image](https://user-images.githubusercontent.com/94679395/201475525-fcaebab8-5613-463b-8466-d347e02dd7b5.png)
+![image](https://user-images.githubusercontent.com/94679395/201475533-3045f6f8-3843-4156-9e1d-8c7ffc013814.png)
+![image](https://user-images.githubusercontent.com/94679395/201475542-43821092-0bf9-4b27-bff9-b671581f9af1.png)
+![image](https://user-images.githubusercontent.com/94679395/201475549-0a0a0971-501d-4da3-8c3d-f2c6f6cd1171.png)
 
 ## Result:
 Thus the program to implement the the Logistic Regression Model to Predict the Placement Status of Student is written and verified using python programming.
